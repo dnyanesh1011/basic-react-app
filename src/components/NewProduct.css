@@ -1,0 +1,103 @@
+.new-product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Increased gap for better spacing */
+  background-color: #2c2c2c; /* Dark card background */
+  padding: 25px; /* More padding for breathing room */
+  border-radius: 12px;
+  box-shadow: 0 1px 8px rgba(255, 68, 68, 0.2); /* Red-tinted shadow */
+  transition: box-shadow 0.3s ease;
+  width: 100%; /* Ensure it fills its container */
+  max-width: 500px; /* Cap width for larger screens */
+  margin: 0 auto; /* Center the form horizontally */
+}
+
+.new-product-form:hover {
+  box-shadow: 0 3px 12px rgba(255, 68, 68, 0.4); /* Enhanced shadow on hover */
+}
+
+.form-group {
+  display: grid; /* Use grid for label/input alignment */
+  grid-template-columns: 120px 1fr; /* Fixed label width, flexible input */
+  align-items: center; /* Vertically align label and input */
+  gap: 10px; /* Space between label and input */
+  margin-bottom: 15px; /* Additional spacing below each group */
+}
+
+label {
+  font-weight: bold;
+  color: #e0e0e0; /* Light text */
+  text-align: right; /* Align labels to the right */
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #444; /* Dark border */
+  border-radius: 8px;
+  background-color: #3a3a3a; /* Dark input background */
+  color: #e0e0e0; /* Light input text */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input:focus {
+  border-color: #3f1313; /* Red border on focus */
+  box-shadow: 0 0 5px rgba(255, 68, 68, 0.5); /* Red glow */
+  outline: none;
+}
+
+/* New container for the button for better centering and spacing */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+button {
+  padding: 12px 24px;
+  background-color: #0008f7; /* Blue button */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  min-width: 150px;
+}
+
+button:hover {
+  background-color: #791919; /* Darker red on hover */
+  transform: scale(1.02); /* Slight scale-up */
+}
+
+button:active {
+  transform: scale(0.98); /* Slight press effect */
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .new-product-form {
+    padding: 15px;
+    max-width: 100%; /* Full width on mobile */
+  }
+
+  .form-group {
+    grid-template-columns: 1fr; /* Stack label and input vertically */
+    text-align: left;
+  }
+
+  label {
+    text-align: left; /* Align labels to left on mobile */
+    margin-bottom: 5px; /* Space below label */
+  }
+
+  .button-container {
+    justify-content: stretch; /* Button takes full width */
+  }
+
+  button {
+    min-width: auto;
+    width: 100%;
+  }
+}
