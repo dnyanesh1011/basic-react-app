@@ -1,0 +1,55 @@
+.app {
+  display: flex;
+  flex-direction: row; /* Changed to row for side-by-side layout */
+  gap: 20px;
+  padding: 20px;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  background-color: #1a1a1a; /* Dark background */
+  color: #e0e0e0; /* Light text */
+  overflow: hidden; /* Prevent scrolling if content overflows */
+  box-sizing: border-box; /* Include padding in width/height */
+}
+
+.new-product-section,
+.products-section {
+  flex: 1; /* Each section takes equal space */
+  background-color: #2c2c2c; /* Slightly lighter dark shade */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Dynamic effect */
+  height: calc(100% - 40px); /* Full height minus padding */
+  overflow-y: auto; /* Scroll if content exceeds height */
+  box-sizing: border-box; /* Include padding in dimensions */
+}
+
+.new-product-section:hover,
+.products-section:hover {
+  transform: translateY(-5px); /* Lift on hover */
+  box-shadow: 0 4px 15px rgba(255, 68, 68, 0.3); /* Red-tinted shadow on hover */
+}
+
+h2 {
+  margin: 0 0 15px 0;
+  color: #ff4444; /* Adjusted to match previous red accent */
+  font-family: 'Arial', sans-serif;
+  font-size: 1.5rem;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .app {
+    flex-direction: column; /* Stack vertically on small screens */
+    padding: 10px;
+    height: auto; /* Allow height to expand on mobile */
+    min-height: 100vh; /* Ensure it fills at least full screen */
+  }
+
+  .new-product-section,
+  .products-section {
+    flex: none; /* Remove flex grow on mobile */
+    width: 100%; /* Full width on mobile */
+    height: auto; /* Adjust height to content */
+  }
+}
